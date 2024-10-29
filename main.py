@@ -2,8 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from time import sleep
-import datetime
-from typing import List
+from datetime import datetime
+from typing import List, Dict
 from dotenv import dotenv_values
 import schedule
 import sys
@@ -60,8 +60,6 @@ def reservationFields(driver: webdriver.Edge, config: dict):
     eighteenHolesButton = driver.find_element(By.XPATH, '//*[@id="nav"]/div/div[4]/div[2]/div/a[2]')
     eighteenHolesButton.click()
 
-from typing import Dict
-
 def bookTimes(driver: webdriver.Edge, config: Dict[str, str]):
     timeElements = driver.find_elements(By.XPATH, '//*[@id="times"]/div/div/div/div/div/div[1]/div[1]/div[1]')
     if len(timeElements) == 0:
@@ -78,9 +76,9 @@ def bookTimes(driver: webdriver.Edge, config: Dict[str, str]):
         else:
             time = time.replace('am', '')
         #only time is used, date remains the same to ensure that times can be compared
-        timeObjects.append(datetime.datetime.fromisoformat('2024-10-17' + ' ' + time))
+        timeObjects.append(datetime.fromisoformat('2024-10-17' + ' ' + time))
 
-    configTime = datetime.datetime.fromisoformat('2024-10-17' + ' ' + config['TIME'])
+    configTime = datetime.fromisoformat('2024-10-17' + ' ' + config['TIME'])
     
     print(timeObjects)
     print(configTime)
@@ -94,7 +92,7 @@ def bookTimes(driver: webdriver.Edge, config: Dict[str, str]):
     sys.exit('Run successful, exiting...')
 
 
-def nearest(items: List[datetime.datetime], pivot: datetime.datetime):
+def nearest(items: List[datetime], pivot: datetime):
     return min(items, key=lambda x: abs(x - pivot))
 
 
