@@ -8,6 +8,8 @@ from dotenv import dotenv_values
 import schedule
 import sys
 
+config = dotenv_values(".env") # Load the environment variables from the .env file
+
 def login(driver: webdriver.Edge, config: dict):
     driver.get("https://foreupsoftware.com/index.php/booking/19765/2431#welcome")  # URL of the login page
 
@@ -97,7 +99,6 @@ def nearest(items: List[datetime.datetime], pivot: datetime.datetime):
 
 
 def job():
-    config = dotenv_values(".env") # Load the environment variables from the .env file
     driver = webdriver.Edge()  # Make sure you have the EdgeDriver installed and in your PATH
     #Login to the website
     login(driver, config)
@@ -108,7 +109,7 @@ def job():
     sleep(2)
     driver.quit()
     
-schedule.every(1).minutes.do(job)
+schedule.every(int(config['INTERVAL_IN_SECONDS'])).seconds.do(job)
 
 while True:
     schedule.run_pending()
