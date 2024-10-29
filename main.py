@@ -91,10 +91,8 @@ def bookTimes(driver: webdriver.Edge, config: Dict[str, str]):
     bookTimeButton.click()
     sys.exit('Run successful, exiting...')
 
-
 def nearest(items: List[datetime], pivot: datetime):
     return min(items, key=lambda x: abs(x - pivot))
-
 
 def job():
     driver = webdriver.Edge()  # Make sure you have the EdgeDriver installed and in your PATH
