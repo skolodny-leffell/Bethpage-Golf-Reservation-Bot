@@ -29,7 +29,7 @@ def reservation(driver: webdriver.Edge, config: dict):
     driver.get("https://foreupsoftware.com/index.php/booking/19765/2431#teetimes")
     
     #find and click reservation button
-    reservationButton = driver.find_element(By.XPATH, '//*[@id="content"]/div/button[3]')  # Change to 2 after testing is complete
+    reservationButton = driver.find_element(By.XPATH, '//*[@id="content"]/div/button[2]')  # Change to 2 after testing is complete
     reservationButton.click()
     
     sleep(1) #wait 1 second for the page to load
@@ -51,7 +51,7 @@ def reservationFields(driver: webdriver.Edge, config: dict):
     dateField.send_keys(Keys.ENTER)
     
     #click 4 players
-    fourPlayersButton = driver.find_element(By.XPATH, '//*[@id="nav"]/div/div[3]/div/div/a[5]') #change to a[4] after testing is complete
+    fourPlayersButton = driver.find_element(By.XPATH, '//*[@id="nav"]/div/div[3]/div/div/a[4]') #change to a[4] after testing is complete
     fourPlayersButton.click() 
     
     #click 18 holes
@@ -89,7 +89,7 @@ def bookTimes(driver: webdriver.Edge, config: Dict[str, str]):
     #Click on the book time button
     bookTimeButton = driver.find_element(By.XPATH, '//*[@id="book_time"]/div/div[3]/button[1]')
     bookTimeButton.click()
-    sys.exit()
+    sys.exit('Run successful, exiting...')
 
 
 def nearest(items: List[datetime.datetime], pivot: datetime.datetime):
