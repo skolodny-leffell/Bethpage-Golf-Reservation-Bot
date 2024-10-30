@@ -96,7 +96,10 @@ def nearest(items: List[datetime], pivot: datetime):
     return min(items, key=lambda x: abs(x - pivot))
 
 def job():
-    driver = webdriver.Edge()  # Make sure you have the EdgeDriver installed and in your PATH
+    options = webdriver.EdgeOptions()
+    if config['HEADLESS'].lower() in ('true', '1', 't'):
+        options.add_argument('headless')
+    driver = webdriver.Edge(options=options)  # Make sure you have the EdgeDriver installed and in your PATH
     #Login to the website
     login(driver, config)
 
