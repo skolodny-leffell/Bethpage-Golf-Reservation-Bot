@@ -40,7 +40,7 @@ Replace `your_username_here`, and `your_password_here` with your actual credenti
 To run the bot, use the following command:
 
 ```bash
-& /path/to/python.exe "path/to/python/file/main.py"
+python "path/to/python/file/main.py"
 ```
 
 This will start the bot using the configurations specified in your `.env` file.
