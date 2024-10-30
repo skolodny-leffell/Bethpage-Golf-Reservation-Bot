@@ -32,9 +32,10 @@ PASSWORD=your_password_here
 DATE=MM-DD-YYYY
 TIME=HH:MM:SS
 INTERVAL_IN_SECONDS=60
+HEADLESS=false
 ```
 
-Replace `your_username_here`, and `your_password_here` with your actual credentials. For the `DATE` replace `MM` with the month, `DD` with the day and `YYYY` with the year (ex. 10-31-2024). For the `TIME`, please use military time. Replace `HH` with the hour, `MM` with the minites and `SS` with the seconds. (ex. 11:20:00 or 14:30:00). The default time in between runs is 60 seconds. Whatever you change the `INTERVAL_IN_SECONDS` to, the interval in seconds between when the code will run will change (WHOLE NUMBERS ONLY)
+Replace `your_username_here`, and `your_password_here` with your actual credentials. For the `DATE` replace `MM` with the month, `DD` with the day and `YYYY` with the year (ex. 10-31-2024). For the `TIME`, please use military time. Replace `HH` with the hour, `MM` with the minites and `SS` with the seconds. (ex. 11:20:00 or 14:30:00). The default time in between runs is 60 seconds. Whatever you change the `INTERVAL_IN_SECONDS` to, the interval in seconds between when the code will run will change (WHOLE NUMBERS ONLY). `HEADLESS` defaults to false. Set it to true if you don't want the browser showing up on the screen.
 
 ### Running the Bot
 To run the bot, use the following command:
