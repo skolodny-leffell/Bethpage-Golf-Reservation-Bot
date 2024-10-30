@@ -72,7 +72,8 @@ def bookTimes(driver: webdriver.Edge, config: Dict[str, str]):
         time = timeElement.text.strip().lower()
         if 'pm' in time:
             time = time.replace('pm', '')
-            time = str(int(time[:time.index(':')]) + 12) + ':' + time[time.index(':') + 1:]
+            if '12' not in time:
+                time = str(int(time[:time.index(':')]) + 12) + ':' + time[time.index(':') + 1:]
         else:
             time = time.replace('am', '')
         #only time is used, date remains the same to ensure that times can be compared
