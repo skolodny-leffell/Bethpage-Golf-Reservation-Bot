@@ -30,13 +30,14 @@ jobs:
           name: artifact
           path: dist/main/
       - name: Upload Release Artifact
-        uses: xresloader/upload-to-github-release@v1.6.0
+        uses: Vucko130/upload-release-action@2.5.4
         with:
+          asset_name: artifact
           file: dist/main/
-          token: ${{ secrets.GITHUB_TOKEN }}
-          draft: true
-          default_release_name: test
-          default_release_body: testing
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          overwrite: true
+          release_name: test
+          body: testing
 
 
           
