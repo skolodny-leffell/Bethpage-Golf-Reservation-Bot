@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/skolodny-leffell/Bethpage-Golf-Reservation-Bot/compare/v1.0.5...v1.0.6) (2024-12-23)
+
+
+### Bug Fixes
+
+* test different gh call method ([3c46855](https://github.com/skolodny-leffell/Bethpage-Golf-Reservation-Bot/commit/3c4685527b413356205a939dd7833bdd4924366d))
+
 ## [1.0.5](https://github.com/skolodny-leffell/Bethpage-Golf-Reservation-Bot/compare/v1.0.4...v1.0.5) (2024-12-23)
 
 
