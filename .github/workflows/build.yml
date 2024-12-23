@@ -41,7 +41,7 @@ jobs:
           name: ${{ github.event.head_commit.message }}
           # Files to attach; newline seperated, recursive globbing supported
           files: |
-            dist/main.exe
+            dist/main/
           # Should the action fail if none of the file globs match?
           fail_on_no_files: true
           
