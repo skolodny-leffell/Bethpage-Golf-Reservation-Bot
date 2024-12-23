@@ -27,8 +27,8 @@ jobs:
           python -m PyInstaller main.spec
       - uses: actions/upload-artifact@v4
         with:
-          name: Windows_Bethpage_Golf_Reservation
-          path: dist/main/main.exe
+          name: artifact
+          path: dist/main/
           
       - uses: googleapis/release-please-action@v4
         id: release
@@ -38,7 +38,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload ${{ steps.release.outputs.tag_name }} ./artifact/main.exe
+        run: gh release upload ${{ steps.release.outputs.tag_name }} ./artifact/
 
           
 
