@@ -26,25 +26,15 @@ jobs:
           name: Windows_Bethpage_Golf_Reservation
           path: dist/main/main
           
-      - name: Create/Update Github Release
-      # You may pin to the exact commit or the version.
-      # uses: mini-bomba/create-github-release@0fd8b05c541176dd92b066cbd0913916ccce1b07
-        uses: docker://ghcr.io/mini-bomba/create-github-release:v1.2.0
+      - uses: googleapis/release-please-action@v4
+        id: release
         with:
-          # Token used for creating/editing releases
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # Tag to create/move and use for the release
-          tag: ${{ github.event.head_commit.message }}
-          # Should the release be marked as a draft?
-          draft: false
-          # Name of the release
-          name: ${{ github.event.head_commit.message }}
-          # Body of the release
-          body: New version
-          # Files to attach; newline seperated, recursive globbing supported
-          files: |
-            dist/main/main
-          # Should the action fail if none of the file globs match?
-          fail_on_no_files: true
+          release-type: simple
+      - name: Upload Release Artifact
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload ${{ steps.release.outputs.tag_name }} ./artifact/main.exe
+
           
 
