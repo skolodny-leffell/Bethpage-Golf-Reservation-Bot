@@ -1,3 +1,3 @@
 .env
 build/
-dist/
+dist/main/_internal/
