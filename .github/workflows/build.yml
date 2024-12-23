@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-windows:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,26 +25,23 @@ jobs:
         with:
           name: Windows_Bethpage_Golf_Reservation
           path: dist/main/main.exe
-
-      - name: create release
-        id: create_release
-        uses: comnoco/create-release@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.BETHPAGE_GITHUB_TOKEN }}
+          
+      - name: Create/Update Github Release
+      # You may pin to the exact commit or the version.
+      # uses: mini-bomba/create-github-release@0fd8b05c541176dd92b066cbd0913916ccce1b07
+        uses: mini-bomba/create-github-release@v1.1.3
         with:
-          tag_name: ${{ github.event.head_commit.message }}
-          release_name: ${{ github.event.head_commit.message }}
-          body: |
-            Test Release v1.0.0
+          # Token used for creating/editing releases
+          token: ${{ secrets.BETHPAGE_GITHUB_TOKEN }}
+          # Tag to create/move and use for the release
+          tag: ${{ github.event.head_commit.message }}
+          # Should the release be marked as a draft?
           draft: false
-          prerelease: false
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.BETHPAGE_GITHUB_TOKEN }}
-        with:
-          upload_url: ${{steps.create_release.outputs.upload_url}}
-          asset_path: dist/main/main.exe
-          asset_name: Bethpage-Golf-Reservation-Windows-amd64.exe
-          asset_content_type: application/zip
+          # Name of the release
+          name: ${{ github.event.head_commit.message }
+          # Files to attach; newline seperated, recursive globbing supported
+          files: dist/main/main.exe
+          # Should the action fail if none of the file globs match?
+          fail_on_no_files: true
+          
+
