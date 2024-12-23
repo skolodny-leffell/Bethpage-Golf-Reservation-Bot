@@ -34,7 +34,6 @@ jobs:
       - name: Upload Release Artifact
         uses: Vucko130/upload-release-action@2.5.4
         with:
-          asset_name: artifact
           file: release.zip
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           overwrite: true
