@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/skolodny-leffell/Bethpage-Golf-Reservation-Bot/compare/v1.0.1...v1.0.2) (2024-12-23)
+
+
+### Bug Fixes
+
+* test ([b165aaa](https://github.com/skolodny-leffell/Bethpage-Golf-Reservation-Bot/commit/b165aaa2b79dcb65f56fb92dffc7f411fb233ae6))
+
 ## [1.0.1](https://github.com/skolodny-leffell/Bethpage-Golf-Reservation-Bot/compare/v1.0.0...v1.0.1) (2024-12-23)
 
 
