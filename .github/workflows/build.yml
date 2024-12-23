@@ -24,7 +24,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Windows_Bethpage_Golf_Reservation
-          path: dist/main/main.exe
+          path: dist/main.exe
           
       - name: Create/Update Github Release
       # You may pin to the exact commit or the version.
@@ -41,7 +41,7 @@ jobs:
           name: ${{ github.event.head_commit.message }}
           # Files to attach; newline seperated, recursive globbing supported
           files: |
-            dist/main/main.exe
+            dist/main.exe
           # Should the action fail if none of the file globs match?
           fail_on_no_files: true
           
