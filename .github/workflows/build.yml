@@ -35,10 +35,11 @@ jobs:
         with:
           release-type: simple
       - name: Upload Release Artifact
-        if: ${{ steps.release.outputs.release_created }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: winpty gh release upload ${{ steps.release.outputs.tag_name }} dist/main/
+        uses: Shopify/upload-to-release@v2.0.0
+        with:
+          name: artifact
+          path: dist/main/
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
           
 
