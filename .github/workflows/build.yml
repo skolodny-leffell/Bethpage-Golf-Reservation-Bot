@@ -38,7 +38,7 @@ jobs:
           # Should the release be marked as a draft?
           draft: false
           # Name of the release
-          name: ${{ github.event.head_commit.message }
+          name: ${{ github.event.head_commit.message }}
           # Files to attach; newline seperated, recursive globbing supported
           files: dist/main/main.exe
           # Should the action fail if none of the file globs match?
