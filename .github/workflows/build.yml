@@ -40,7 +40,8 @@ jobs:
           # Name of the release
           name: ${{ github.event.head_commit.message }}
           # Files to attach; newline seperated, recursive globbing supported
-          files: dist/main/main.exe
+          files: |
+            dist/main/main.exe
           # Should the action fail if none of the file globs match?
           fail_on_no_files: true
           
