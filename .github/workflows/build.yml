@@ -24,7 +24,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Windows_Bethpage_Golf_Reservation
-          path: dist/main/main
+          path: dist/main/main.exe
           
       - uses: googleapis/release-please-action@v4
         id: release
