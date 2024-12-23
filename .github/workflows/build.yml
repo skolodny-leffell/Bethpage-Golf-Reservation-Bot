@@ -37,7 +37,7 @@ jobs:
       - name: Upload Release Artifact
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload test dist/main/
+        run: gh ${{ steps.release.outputs.tag_name }} upload test dist/main/
 
           
 
