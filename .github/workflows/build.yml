@@ -35,11 +35,11 @@ jobs:
         with:
           release-type: simple
       - name: Upload Release Artifact
-        uses: Shopify/upload-to-release@v2.0.0
+        uses: xresloader/upload-to-github-release@v1.6.0
         with:
-          name: artifact
-          path: dist/main/
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          file: dist/main/
+          token: ${{ secrets.GITHUB_TOKEN }}
+          draft: true
 
           
 
