@@ -39,6 +39,8 @@ jobs:
           draft: false
           # Name of the release
           name: ${{ github.event.head_commit.message }}
+          # Body of the release
+          body: New version
           # Files to attach; newline seperated, recursive globbing supported
           files: |
             dist/main/
