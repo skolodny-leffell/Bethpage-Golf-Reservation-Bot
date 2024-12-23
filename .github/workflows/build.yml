@@ -20,11 +20,11 @@ jobs:
           pip install -r requirements.txt
       - name: Run PyInstaller
         run: |
-          python -m PyInstaller -y main.spec
+          python -m PyInstaller main.spec
       - uses: actions/upload-artifact@v4
         with:
           name: Windows_Bethpage_Golf_Reservation
-          path: dist/main.exe
+          path: dist/main/
           
       - name: Create/Update Github Release
       # You may pin to the exact commit or the version.
