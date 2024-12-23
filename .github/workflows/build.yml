@@ -1,4 +1,4 @@
-name: Build Python and Release EXE
+name: Build Python and Release Executable
 
 on:
   push:
