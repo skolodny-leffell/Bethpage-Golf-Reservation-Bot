@@ -29,5 +29,5 @@ Replace `your_username_here`, and `your_password_here` with your actual credenti
 ### Running the Bot
 To run the bot, open the `main.exe` file in the same folder as `.env` file.
 
-This will start the bot using the configurations specified in your `.env` file.
+This will start the bot using the configurations specified in your `.env` file. As long as the terminal appears and does not go away, the bot is running. DO NOT CLOSE the terminal.
 
